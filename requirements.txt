@@ -1,4 +1,0 @@
-google-generativeai
-streamlit
-gspread
-oauth2client
