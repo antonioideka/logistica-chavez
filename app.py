@@ -224,16 +224,16 @@ def get_openai_client():
 
 @st.cache_resource
 def get_gemini_client():
-    genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+   genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     return genai.GenerativeModel(
-        model_name="models/gemini-1.5-flash-latest", # Agregamos 'models/' y '-latest'
+        model_name="gemini-2.0-flash",
         generation_config=genai.GenerationConfig(
             temperature=0.1,
             max_output_tokens=2000,
-            response_mime_type="application/json",  # fuerza JSON nativo
-        ),
-        system_instruction=SYSTEM_PROMPT,
-    )
+            response_mime_type="application/json",
+    ),
+    system_instruction=SYSTEM_PROMPT,
+)
 
 # ─── PARSE ORDER ─────────────────────────────────────────────────────────────────
 def parse_order_openai(text: str) -> dict:
