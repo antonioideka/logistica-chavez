@@ -224,7 +224,7 @@ def get_openai_client():
 
 @st.cache_resource
 def get_gemini_client():
-   genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])   
     return genai.GenerativeModel(
         model_name="gemini-2.0-flash",
         generation_config=genai.GenerationConfig(
