@@ -226,7 +226,7 @@ def get_openai_client():
 def get_gemini_client():
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
     return genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
+        model_name="models/gemini-1.5-flash-latest", # Agregamos 'models/' y '-latest'
         generation_config=genai.GenerationConfig(
             temperature=0.1,
             max_output_tokens=2000,
